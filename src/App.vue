@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="container">
     <h2>{{ title }}</h2>
-    <add-item-component></add-item-component>
+    <add-item-component :items="items"></add-item-component>
     <items-component :items="items"></items-component>
     <div class="footer">
       <hr/>
@@ -17,19 +17,11 @@
 
   export default {
     components: {AddItemComponent, ItemsComponent, ChangeTitleComponent},
-    data() {
+    data: () => {
       return {
         items: [{text: 'Bananas', checked: true},
           {text: 'Apples', checked: false}],
         title: 'Hello World'
-      }
-    },
-    methods: {
-      addItem(text) {
-        this.items.push({
-          text: text,
-          checked: false
-        })
       }
     }
   }
