@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
+    <hello-component></hello-component>
     <h2>Essential Links</h2>
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
@@ -20,8 +20,11 @@
 </template>
 
 <script>
+  import HelloComponent from './component/HelloComponent.vue'
+
   export default {
     name: 'app',
+    components: {HelloComponent},
     data() {
       return {
         msg: 'Welcome to Your Vue.js App'
