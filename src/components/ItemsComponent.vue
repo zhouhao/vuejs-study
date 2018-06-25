@@ -1,10 +1,17 @@
 <template>
-  <div>Items</div>
+  <div>
+    <item-component v-for="item in items" :key="item.text" :item="item">
+    </item-component>
+  </div>
 </template>
 
 <script>
+  import ItemComponent from './ItemComponent'
+
   export default {
-    name: "ItemsComponent"
+    name: "ItemsComponent",
+    components: {ItemComponent},
+    props: ['items']
   }
 </script>
 
